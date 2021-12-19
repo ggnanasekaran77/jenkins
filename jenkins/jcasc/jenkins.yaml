@@ -47,3 +47,13 @@ unclassified:
                 clearWorkspace: false
                 copyHidden: false
                 path: "/tmp/shared-lib"
+jobs:
+  - script: >
+      pipelineJob('test') {
+          definition {
+            cps {
+              sandbox(true)
+              script("hello()")
+            }
+          }
+      }

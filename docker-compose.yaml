@@ -7,6 +7,8 @@ services:
     environment:
       JAVA_OPTS: "-Djenkins.install.runSetupWizard=false"
       CASC_JENKINS_CONFIG: "/usr/share/jenkins/ref/jenkins.yaml"
+    volumes:
+      - "./jenkins/shared-lib:/tmp/shared-lib"
     ports:
       - "8080:8080"
       - "50000:50000"

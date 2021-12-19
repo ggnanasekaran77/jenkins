@@ -37,7 +37,7 @@ jenkins:
 unclassified:
   globalLibraries:
     libraries:
-      - defaultVersion: "master"
+      - defaultVersion: "main"
         implicit: true
         name: "shared-lib"
         retriever:

@@ -1,1 +1,4 @@
 jenkins_home
+.idea
+*.iml
+lib

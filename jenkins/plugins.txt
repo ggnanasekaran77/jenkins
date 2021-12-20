@@ -19,3 +19,4 @@ pipeline-stage-view
 blueocean
 multibranch-scan-webhook-trigger
 basic-branch-build-strategies
+ws-cleanup

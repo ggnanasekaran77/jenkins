@@ -2,3 +2,6 @@ jenkins_home
 .idea
 *.iml
 lib
+**/.gradle
+**/build
+configserver.zip

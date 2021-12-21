@@ -78,3 +78,9 @@ eyJhbGciOiJSUzI1NiIsImtpZCI6IjF2YVdlX0Z1ZE5FY1RKOVMtRHQydFhlWlNYR3o4RzZKcGQwZDBk
 ## Useful Links
 - https://plugins.jenkins.io/kubernetes/
 - https://jenkinsci.github.io/job-dsl-plugin/
+- https://cloud.spring.io/spring-cloud-config/reference/html/#_spring_cloud_config_server
+
+## Spring Cloud ConfigServer
+```bash
+ssh-keygen -m PEM -t rsa -b 4096 -f ~/config_server_deploy_key.rsa
+```

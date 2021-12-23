@@ -78,9 +78,14 @@ eyJhbGciOiJSUzI1NiIsImtpZCI6IjF2YVdlX0Z1ZE5FY1RKOVMtRHQydFhlWlNYR3o4RzZKcGQwZDBk
 ## Useful Links
 - https://plugins.jenkins.io/kubernetes/
 - https://jenkinsci.github.io/job-dsl-plugin/
-- https://cloud.spring.io/spring-cloud-config/reference/html/#_spring_cloud_config_server
+- https://cloud.spring.io/spring-cloud-config/reference/html/
+- https://start.spring.io/#!type=gradle-project&language=java&platformVersion=2.6.2&packaging=jar&jvmVersion=1.8&groupId=com.gnanam.jenkins&artifactId=configserver&name=configserver&description=Demo%20project%20for%20Spring%20Boot&packageName=com.gnanam.jenkins.configserver&dependencies=cloud-config-server,web
 
 ## Spring Cloud ConfigServer
+
+### Introduction
+* Spring Cloud Config is Spring's client/server approach for storing and serving distributed configurations across multiple applications and environments.
+
 ```bash
 ssh-keygen -m PEM -t rsa -b 4096 -f ~/config_server_deploy_key.rsa
 ```

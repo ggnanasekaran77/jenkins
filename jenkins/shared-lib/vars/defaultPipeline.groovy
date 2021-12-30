@@ -2,36 +2,11 @@
 
 def call(pipelineYaml) {
 
-    def gitURL = "https://github.com/ggnanasekaran77/configserver.git"
     pipeline {
         agent {
             kubernetes {
-                defaultContainer 'gradle'
-                yaml '''
-                    apiVersion: v1
-                    kind: Pod
-                    metadata:
-                      labels:
-                        cicd: gradle-docker
-                    spec:
-                      containers:
-                      - name: gradle
-                        image: gradle:7.2.0-jdk11
-                        command:
-                        - cat
-                        tty: true
-                        volumeMounts:
-                        - name: build-cache
-                          mountPath: /tmp
-                      - name: docker
-                        image: docker:19.03.1-dind
-                        securityContext:
-                          privileged: true
-                      volumes:
-                      - name: build-cache
-                        hostPath:
-                          path: /tmp        
-                '''
+                defaultContainer "${pipelineYaml.build.type}"
+                yaml podTemplateYaml(pipelineYaml)
             }
         }
         options {
@@ -47,13 +22,13 @@ def call(pipelineYaml) {
         stages {
             stage('Checkout') {
                 steps {
-                    git url: gitURL, branch: appBranch
+                    git url: "${pipelineYaml.gitURL}", branch: appBranch
                 }
             }
             stage('App Build') {
                 steps {
                     sh 'mkdir -p /tmp/cache'  
-                    sh "gradle clean build -g /tmp/cache"
+                    sh "${pipelineYaml.build.command} -g /tmp/cache"
                 }
             }
             stage('Doc Build') {
